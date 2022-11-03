@@ -9,6 +9,7 @@
 由hewei2723二次修改，并适配新乡工程学院雨课堂
 
 如使用Thony需要先安装requsets库
+库地址 https://github.com/psf/requests
 #### 注意
 
 目前不可用于公选课，但可以尝试一下
