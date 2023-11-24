@@ -6,8 +6,8 @@ import requests
 import re
 import base64
 import json
-CSR = input("请输入你的CSR")
-SES = input("请输入你的SES")
+CSR = input("请输入你的CSR：")
+SES = input("请输入你的SES：")
 token = "5q2k5Li65byA5rqQ5bel5YW355SxaGV3ZWkyNzIz5LqM5qyh5byA5Y+R77yM5LuF5L6b5a2m5Lmg5Lqk5rWB5L2/55So"
 csrftoken = (CSR)
 sessionid = (SES)
@@ -52,7 +52,7 @@ def get_course_list():
     response = requests.get('https://changjiang.yuketang.cn/v2/api/web/courses/list', params=params,
                             headers=headers).json()
     if response['errmsg'] != 'Success':
-        print("csrftoken或者sessionid有问题请检查！")
+        print("你的csrftoken或者sessionid填错了！")
         exit(1)
 
     index = 0
@@ -61,7 +61,7 @@ def get_course_list():
         print("编号：" + str(index + 1) + " 课名：" + str(i["course"]['name']))
         index += 1
 
-    number = int(input("你想刷哪门课呢？请输入编号：\n"))
+    number = int(input("你学习哪节课？输入编号：\n"))
     return str(Classid[number - 1])
 
 
@@ -85,7 +85,7 @@ def lookok(video_id, video_name, cid, user_id, classroomid, skuid):
         pass
 
     if if_completed == '1':
-        print(video_name + "学过了")
+        print(video_name + " 这个已经学过了啊 ！你怎么能偷偷学习？")
         return 1
     else:
         print(video_name + "，正在迷惑服务器")
@@ -172,7 +172,7 @@ if __name__ == "__main__":
                 user_id = getccid['data']['user_id']
                 ccid = getccid['data']['content_info']['media']['ccid']
                 course_id = getccid['data']['course_id']
-                lookok(i['id'], i['leaf_chapter_title'], course_id, str(user_id), cid, skuid)
+                lookok(i['id'], i['leaf_level_title'], course_id, str(user_id), cid, skuid)
         print("--偷懒吧你！--")
     else:
         response = requests.post('https://changjiang.yuketang.cn/mooc-api/v1/lms/learn/course/pub_new_pro',
