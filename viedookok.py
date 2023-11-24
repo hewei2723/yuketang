@@ -6,8 +6,8 @@ import requests
 import re
 import base64
 import json
-CSR = input("请输入你的CSR：")
-SES = input("请输入你的SES：")
+CSR = input("请输入你的csrftoken：")
+SES = input("请输入你的sessionid：")
 token = "5q2k5Li65byA5rqQ5bel5YW355SxaGV3ZWkyNzIz5LqM5qyh5byA5Y+R77yM5LuF5L6b5a2m5Lmg5Lqk5rWB5L2/55So"
 csrftoken = (CSR)
 sessionid = (SES)
@@ -61,8 +61,8 @@ def get_course_list():
         print("编号：" + str(index + 1) + " 课名：" + str(i["course"]['name']))
         index += 1
 
-    number = int(input("你学习哪节课？输入编号：\n"))
-    return str(Classid[number - 1])
+    number = int(input("编号是跟老师上传课程顺序有关，举个例子，如果你的课程是 编号：4 课名：就业创业 如果你输入4没反应，就输入3或者5,也就是编号附近的数字，范围一般不会超过+-2\n你学习哪节课？输入编号：\n "))
+    return str(Classid[number])
 
 
 def get_video_watch_progress(cid, user_id, classroomid, video_id):
@@ -92,7 +92,7 @@ def lookok(video_id, video_name, cid, user_id, classroomid, skuid):
 
     video_frame = 0
     val = 0
-    learning_rate = 20
+    learning_rate = 40
     t = time.time()
     timestap = int(round(t * 1000))
 
@@ -165,7 +165,7 @@ if __name__ == "__main__":
         get_url = 'https://changjiang.yuketang.cn/c27/online_courseware/schedule/score_detail/single/%s/0/' % skuid
         ret = requests.get(url=get_url, headers=headers).json()
         for i in ret['data']['leaf_level_infos']:
-            if i['leaf_level_title'] != 'Video':
+            if i['leaf_type'] != '':
                 get_url = 'https://changjiang.yuketang.cn/mooc-api/v1/lms/learn/leaf_info/%s/%s/' % (cid, i['id'])
                 getccid = requests.get(url=get_url, headers=headers).json()
                 skuid = getccid['data']['sku_id']
