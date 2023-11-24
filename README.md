@@ -4,7 +4,8 @@
 
 #### 介绍
 
-项目1.0(fork.py)源自:https://github.com/heyblackC/yuketangHelper,不过已经不能用了
+项目1.0(fork.py)源自:https://github.com/heyblackC/yuketangHelper  不过已经不能用了
+
 项目2.0(videookok.py) 1.0说是通过修改心跳包来达到刷课的目的，我在他的思路下重写了一份代码
 
 此代码原生适配 新乡工程学院雨课堂

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# version 4.1
+# version 4.2
 # 此源码适用于长江雨课堂
 import time
 import requests
