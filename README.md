@@ -8,7 +8,7 @@
 
 项目2.0(videookok.py) 1.0说是通过修改心跳包来达到刷课的目的，我在他的思路下重写了一份代码
 
-二次开发，并适配新乡工程学院雨课堂
+二次开发，并适配厂家雨课堂
 
 如使用Thony需要先安装requsets库
 库地址 https://github.com/psf/requests
