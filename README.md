@@ -1,4 +1,4 @@
-# 长江雨课堂刷网课 新乡工程学院雨课堂
+# 长江雨课堂刷网课 雨课堂
 用来刷网课，适用于长江雨课堂
 # 长江雨课堂刷视频脚本
 
@@ -6,7 +6,7 @@
 
 项目源自:https://github.com/heyblackC/yuketangHelper
 
-二次开发，并适配新乡工程学院雨课堂
+二次开发雨课堂
 
 如使用Thony需要先安装requsets库
 库地址 https://github.com/psf/requests
