@@ -82,7 +82,7 @@ def lookok(video_id, video_name, cid, user_id, classroomid, skuid):
     timestap = int(round(t * 1000))
     while val not in ["1.0", '1']:
         heart_data = []
-        for i in range(65):
+        for i in range(65):#速率
             heart_data.append({
                 "i": 5,
                 "et": "loadeddata",
