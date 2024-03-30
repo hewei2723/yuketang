@@ -6,7 +6,7 @@ import requests
 import re
 import base64
 import json
-CSR = input("请输入CSRF令牌:")
+CSR = input("请输入CSR令牌:")
 SES = input("请输入SESSIONID:")
 token = "5q2k5Li65byA5rqQ5bel5YW355SxaGV3ZWkyNzIz5LqM5qyh5byA5Y+R77yM5LuF5L6b5a2m5Lmg5Lqk5rWB5L2/55So"
 csrftoken = (CSR)
